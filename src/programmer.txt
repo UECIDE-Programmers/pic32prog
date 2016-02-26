@@ -1,0 +1,13 @@
+name=pic32prog
+description=Upload to chipKIT board via pic32prog
+programmer.method=serial
+programmer.reset=dtr
+programmer.reset.dtr=true
+programmer.reset.rts=true
+programmer.command.linux_arm=${programmer:root}/linux_arm/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.command.linux_i386=${programmer:root}/linux32/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.command.linux_amd64=${programmer:root}/linux64/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.command.windows=${programmer:root}/windows/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.command.macosx=${programmer:root}/macosx/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.ldsuffix=
+family=pic32
