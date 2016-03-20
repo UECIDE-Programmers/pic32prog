@@ -1,13 +1,30 @@
 name=pic32prog
 description=Upload to chipKIT board via pic32prog
-programmer.method=serial
-programmer.reset=dtr
-programmer.reset.dtr=true
-programmer.reset.rts=true
-programmer.command.linux_arm=${programmer:root}/linux_arm/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
-programmer.command.linux_i386=${programmer:root}/linux32/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
-programmer.command.linux_amd64=${programmer:root}/linux64/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
-programmer.command.windows=${programmer:root}/windows/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
-programmer.command.macosx=${programmer:root}/macosx/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+
+upload.protocol=stk500v2
+
+programmer.method=script
+programmer.script.0=__builtin_exec::programmer.${upload.protocol}.script
+
+programmer.hid.script.0=__builtin_bullet::Uploading with HID protocol
+programmer.hid.script.1.linux_arm=${programmer:root}/linux_arm/pic32prog::-S::-p::${filename}.hex
+programmer.hid.script.1.linux_i386=${programmer:root}/linux32/pic32prog::-S::-p::${filename}.hex
+programmer.hid.script.1.linux_amd64=${programmer:root}/linux64/pic32prog::-S::-p::${filename}.hex
+programmer.hid.script.1.windows=${programmer:root}/windows/pic32prog::-S::-p::${filename}.hex
+programmer.hid.script.1.macosx=${programmer:root}/macosx/pic32prog::-S::-p::${filename}.hex
+
+programmer.stk500v2.script.0=__builtin_bullet::Uploading with STK500v2 protocol
+programmer.stk500v2.script.1=__builtin_bullet2::Resetting board
+programmer.stk500v2.script.2=__builtin_port::open::${upload.speed}
+programmer.stk500v2.script.3=__builtin_port::pulse
+programmer.stk500v2.script.4=__builtin_port::close
+programmer.stk500v2.script.5=__builtin_exec::programmer.do.script
+programmer.stk500v2.script.6=__builtin_bullet2::Uploading firmware
+programmer.stk500v2.script.7.linux_arm=${programmer:root}/linux_arm/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.stk500v2.script.7.linux_i386=${programmer:root}/linux32/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.stk500v2.script.7.linux_amd64=${programmer:root}/linux64/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.stk500v2.script.7.windows=${programmer:root}/windows/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+programmer.stk500v2.script.7.macosx=${programmer:root}/macosx/pic32prog::-S::-d::${port}::-B::${upload.maxbaud}::-p::${filename}.hex
+
 programmer.ldsuffix=
 family=pic32
