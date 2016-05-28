@@ -4,15 +4,14 @@ description=Upload to chipKIT board via pic32prog
 upload.protocol=stk500v2
 
 programmer.method=script
-programmer.script.0=__builtin_merge_hex::${build.path}/${filename}-merged.hex::${build.path}/${filename}.hex
-programmer.script.1=__builtin_exec::programmer.${upload.protocol}.script
+programmer.script.0=__builtin_exec::programmer.${upload.protocol}.script
 
 programmer.hid.script.0=__builtin_bullet::Uploading with HID protocol
-programmer.hid.script.1.linux_arm=${programmer:root}/linux_arm/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.hid.script.1.linux_i386=${programmer:root}/linux32/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.hid.script.1.linux_amd64=${programmer:root}/linux64/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.hid.script.1.windows=${programmer:root}/windows/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.hid.script.1.macosx=${programmer:root}/macosx/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
+programmer.hid.script.1.linux_arm=${programmer:root}/linux_arm/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.hid.script.1.linux_i386=${programmer:root}/linux32/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.hid.script.1.linux_amd64=${programmer:root}/linux64/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.hid.script.1.windows=${programmer:root}/windows/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.hid.script.1.macosx=${programmer:root}/macosx/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
 
 programmer.stk500v2.script.0=__builtin_bullet::Uploading with STK500v2 protocol
 programmer.stk500v2.script.1=__builtin_bullet2::Resetting board
@@ -20,11 +19,11 @@ programmer.stk500v2.script.2=__builtin_port::open::${upload.speed}
 programmer.stk500v2.script.3=__builtin_port::pulse
 programmer.stk500v2.script.4=__builtin_port::close
 programmer.stk500v2.script.5=__builtin_bullet2::Uploading firmware
-programmer.stk500v2.script.6.linux_arm=${programmer:root}/linux_arm/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}-merged.hex
-programmer.stk500v2.script.6.linux_i386=${programmer:root}/linux32/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}-merged.hex
-programmer.stk500v2.script.6.linux_amd64=${programmer:root}/linux64/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}-merged.hex
-programmer.stk500v2.script.6.windows=${programmer:root}/windows/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}-merged.hex
-programmer.stk500v2.script.6.macosx=${programmer:root}/macosx/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}-merged.hex
+programmer.stk500v2.script.6.linux_arm=${programmer:root}/linux_arm/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}.hex
+programmer.stk500v2.script.6.linux_i386=${programmer:root}/linux32/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}.hex
+programmer.stk500v2.script.6.linux_amd64=${programmer:root}/linux64/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}.hex
+programmer.stk500v2.script.6.windows=${programmer:root}/windows/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}.hex
+programmer.stk500v2.script.6.macosx=${programmer:root}/macosx/pic32prog::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-B::1000000::-p::${filename}.hex
 
 programmer.verbose=-DD
 
