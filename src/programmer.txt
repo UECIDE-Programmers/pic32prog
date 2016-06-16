@@ -13,6 +13,13 @@ programmer.hid.script.1.linux_amd64=${programmer:root}/linux64/pic32prog::${prog
 programmer.hid.script.1.windows=${programmer:root}/windows/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
 programmer.hid.script.1.macosx=${programmer:root}/macosx/pic32prog::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
 
+programmer.uhb.script.0=__builtin_bullet::Uploading with UHB protocol
+programmer.uhb.script.1.linux_arm=${programmer:root}/linux_arm/pic32prog::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.linux_i386=${programmer:root}/linux32/pic32prog::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.linux_amd64=${programmer:root}/linux64/pic32prog::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.windows=${programmer:root}/windows/pic32prog::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.macosx=${programmer:root}/macosx/pic32prog::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+
 programmer.stk500v2.script.0=__builtin_bullet::Uploading with STK500v2 protocol
 programmer.stk500v2.script.1=__builtin_bullet2::Resetting board
 programmer.stk500v2.script.2=__builtin_port::open::${upload.speed}
