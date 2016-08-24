@@ -20,12 +20,12 @@ programmer.hid.script.1.windows=${pic32prog.windows}::${programmer.pic32prog.ver
 programmer.hid.script.1.macosx=${pic32prog.macosx}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
 
 programmer.uhb.script.0=__builtin_bullet::Uploading with UHB protocol
-programmer.uhb.script.1=__builtin_merge_hex::${build.path}/${filename}-merged.hex::${bootloader.file}.hex::${build.path}/${filename}.hex
-programmer.uhb.script.2.linux_arm=${pic32prog.linux_arm}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.uhb.script.2.linux_i386=${pic32prog.linux_i386}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.uhb.script.2.linux_amd64=${pic32prog.linux_amd64}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.uhb.script.2.windows=${pic32prog.windows}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
-programmer.uhb.script.2.macosx=${pic32prog.macosx}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}-merged.hex
+programmer.uhb.script.1.linux_arm=${pic32prog.linux_arm}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.linux_i386=${pic32prog.linux_i386}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.linux_amd64=${pic32prog.linux_amd64}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.windows=${pic32prog.windows}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.macosx=${pic32prog.macosx}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.2=__builtin_bullet::Finished.
 
 programmer.stk500v2.script.0=__builtin_bullet::Uploading with STK500v2 protocol
 programmer.stk500v2.script.1=__builtin_bullet2::Resetting board
