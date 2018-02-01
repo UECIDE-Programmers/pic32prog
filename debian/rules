@@ -1,4 +1,27 @@
 #!/usr/bin/make -f
+SRCTOP    := $(shell if [ "$$PWD" != "" ]; then echo $$PWD; else pwd; fi)
+DESTDIR    = $(SRCTOP)/debian/$(package)
 
 %:
 	dh $@
+
+override_dh_auto_clean:
+	rm -rf pic32prog-autotools build 
+
+override_dh_auto_build:
+	wget -c -O ../../downloads/pic32prog-autotools.zip https://github.com/majenkotech/pic32prog-autotools/archive/master.zip
+	unzip ../../downloads/pic32prog-autotools.zip
+
+override_dh_auto_install:
+	mkdir -p debian/programmers/pic32prog/linux32
+	mkdir -p debian/programmers/pic32prog/linux64
+	mkdir -p debian/programmers/pic32prog/linux_arm
+	mkdir -p debian/programmers/pic32prog/macosx
+	mkdir -p debian/programmers/pic32prog/windows
+	cp pic32prog-autotools-master/bin/pic32prog-debian-32 ${DESTDIR}/programmers/pic32prog/linux32/pic32prog
+	cp pic32prog-autotools-master/bin/pic32prog-debian-64 ${DESTDIR}/programmers/pic32prog/linux64/pic32prog
+	cp pic32prog-autotools-master/bin/pic32prog-debian-armhf ${DESTDIR}/programmers/pic32prog/linux_arm/pic32prog
+	cp pic32prog-autotools-master/bin/pic32prog-win32.exe ${DESTDIR}/programmers/pic32prog/windows/pic32prog.exe
+	cp dll/libusb0.dll ${DESTDIR}/programmers/pic32prog/windows/libusb0.dll
+	cp pic32prog-autotools-master/bin/pic32prog-osx-fat ${DESTDIR}/programmers/pic32prog/macosx/pic32prog
+	cp debian/programmer.txt ${DESTDIR}/programmers/pic32prog/programmer.txt
