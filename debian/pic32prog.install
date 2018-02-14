@@ -1,6 +1,0 @@
-src/linux32/ programmers/pic32prog
-src/linux64/ programmers/pic32prog
-src/linux_arm/ programmers/pic32prog
-src/macosx/ programmers/pic32prog
-src/programmer.txt programmers/pic32prog
-src/windows/ programmers/pic32prog
