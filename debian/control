@@ -1,5 +1,5 @@
 Source: pic32prog
-Section: programmers
+Section: main
 XBSC-Family: pic32
 Priority: extra
 Maintainer: Matt Jenkins <matt@majenko.co.uk>
@@ -7,9 +7,10 @@ Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.4
 
 Package: pic32prog
-Section: programmers
+Section: main
 Architecture: all
-XBSC-Group: PIC32
+XBSC-Group: Programmers
+XBSC-SubGroup: PIC32
 Description: PIC32Prog
  This is the default programmer for chipKIT boards with bootloaders installed.
 
