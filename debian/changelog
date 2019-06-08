@@ -1,0 +1,43 @@
+pic32prog (2.1.46r3) uecide; urgency=low
+
+  * Added baud rate to stk500v2
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.46r2) uecide; urgency=low
+
+  * Added wait to AN1388
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.46r1) uecide; urgency=low
+
+  * New structure
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.46) uecide; urgency=low
+
+  * Released new version of pic32prog
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.41) uecide; urgency=low
+
+  * Released new version of pic32prog
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.40) uecide; urgency=low
+
+  * Released new version of pic32prog
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.37) uecide; urgency=low
+
+  * Released new version of pic32prog
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+
