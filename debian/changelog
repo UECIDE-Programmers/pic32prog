@@ -1,3 +1,15 @@
+pic32prog (2.1.51r1) uecide; urgency=low
+
+  * Fixed bitbang read_word
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.49r1) uecide; urgency=low
+
+  * Improvements to bitbang
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
 pic32prog (2.1.46r3) uecide; urgency=low
 
   * Added baud rate to stk500v2
