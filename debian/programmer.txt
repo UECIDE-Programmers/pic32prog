@@ -40,11 +40,11 @@ programmer.stk500v2.script.2=__builtin_port::open::${upload.speed}
 programmer.stk500v2.script.3=__builtin_port::pulse
 programmer.stk500v2.script.4=__builtin_port::close
 programmer.stk500v2.script.5=__builtin_bullet2::Uploading firmware
-programmer.stk500v2.script.6.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-p::${filename}.hex
-programmer.stk500v2.script.6.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-p::${filename}.hex
-programmer.stk500v2.script.6.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-p::${filename}.hex
-programmer.stk500v2.script.6.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-p::${filename}.hex
-programmer.stk500v2.script.6.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-p::${filename}.hex
+programmer.stk500v2.script.6.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2.script.6.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2.script.6.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2.script.6.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2.script.6.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
 
 programmer.verbose=-DD
 
