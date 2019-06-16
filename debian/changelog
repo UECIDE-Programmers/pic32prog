@@ -1,3 +1,15 @@
+pic32prog (2.1.51r3) uecide; urgency=low
+
+  * Combining different programmers
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
+pic32prog (2.1.51r2) uecide; urgency=low
+
+  * Fixed programmer.txt location
+
+ -- Matt Jenkins <matt@majenko.co.uk>  Thu, 1 Feb 2018 19:00:05 +0000
+
 pic32prog (2.1.51r1) uecide; urgency=low
 
   * Fixed bitbang read_word

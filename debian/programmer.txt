@@ -46,6 +46,34 @@ programmer.stk500v2.script.6.linux_amd64=${pic32prog.linux_amd64}::${verbose}::$
 programmer.stk500v2.script.6.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
 programmer.stk500v2.script.6.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
 
+programmer.stk500v2-1200.script.0=__builtin_bullet::Uploading with STK500v2 protocol
+programmer.stk500v2-1200.script.1=__builtin_bullet2::Resetting board
+programmer.stk500v2-1200.script.2=__builtin_port::open::1200
+programmer.stk500v2-1200.script.3=__builtin_port::close
+programmer.stk500v2-1200.script.4=__builtin_port::open::${upload.speed}
+programmer.stk500v2-1200.script.5=__builtin_port::close
+programmer.stk500v2-1200.script.6=__builtin_port::find::${program.vid}::${program.pid}
+programmer.stk500v2-1200.script.7=__builtin_bullet2::New matching port found on ${port.found}
+programmer.stk500v2-1200.script.8=__builtin_bullet2::Uploading firmware
+programmer.stk500v2-1200.script.9.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-1200.script.9.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-1200.script.9.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-1200.script.9.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-1200.script.9.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+
+programmer.stk500v2-hunt.script.0=__builtin_bullet::Uploading with STK500v2 protocol
+programmer.stk500v2-hunt.script.1=__builtin_bullet2::Enter programming mode now!
+programmer.stk500v2-hunt.script.2=__builtin_port::find::${program.vid}::${program.pid}
+programmer.stk500v2-hunt.script.3=__builtin_bullet2::New matching port found on ${port.found}
+programmer.stk500v2-hunt.script.4=__builtin_bullet2::Uploading firmware
+programmer.stk500v2-hunt.script.5.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-hunt.script.5.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-hunt.script.5.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-hunt.script.5.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2-hunt.script.5.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+
+
+
 programmer.verbose=-DD
 
 programmer.ldsuffix=
