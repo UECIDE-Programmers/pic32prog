@@ -6,6 +6,7 @@ upload.protocol=stk500v2
 pic32prog.linux_i386=${programmer:root}/linux32/pic32prog
 pic32prog.linux_amd64=${programmer:root}/linux64/pic32prog
 pic32prog.linux_arm=${programmer:root}/linux_arm/pic32prog
+pic32prog.linux_mipsel=${programmer:root}/linux_mipsel/pic32prog
 pic32prog.windows=${programmer:root}/windows/pic32prog
 pic32prog.macosx=${programmer:root}/macosx/pic32prog
 

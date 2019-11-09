@@ -22,7 +22,7 @@ override_dh_auto_build:
 	wget -c -O ${DOWNLOADS}/pic32prog-debian-armhf-${VERSION}.tar.gz https://github.com/majenkotech/pic32prog-autotools/releases/download/${VERSION}/pic32prog-debian-armhf-${VERSION}.tar.gz
 	wget -c -O ${DOWNLOADS}/pic32prog-osx-fat-${VERSION}.tar.gz https://github.com/majenkotech/pic32prog-autotools/releases/download/${VERSION}/pic32prog-osx-fat-${VERSION}.tar.gz
 	wget -c -O ${DOWNLOADS}/pic32prog-win32-${VERSION}.tar.gz https://github.com/majenkotech/pic32prog-autotools/releases/download/${VERSION}/pic32prog-win32-${VERSION}.tar.gz
-
+	wget -c -O ${DOWNLOADS}/pic32prog-mipsel-${VERSION}.tar.gz https://github.com/majenkotech/pic32prog-autotools/releases/download/${VERSION}/pic32prog-mipsel-${VERSION}.tar.gz
 
 
 override_dh_auto_install:
@@ -41,6 +41,11 @@ override_dh_auto_install:
 	tar -zxvf ${DOWNLOADS}/pic32prog-debian-armhf-${VERSION}.tar.gz
 	cp pic32prog/* ${DESTDIR}/programmers/pic32prog/linux_arm/
 	chmod 755 ${DESTDIR}/programmers/pic32prog/linux_arm/*
+	rm -rf pic32prog
+	mkdir -p ${DESTDIR}/programmers/pic32prog/linux_mipsel
+	tar -zxvf ${DOWNLOADS}/pic32prog-mipsel-${VERSION}.tar.gz
+	cp pic32prog/* ${DESTDIR}/programmers/pic32prog/linux_mipsel/
+	chmod 755 ${DESTDIR}/programmers/pic32prog/linux_mipsel/*
 	rm -rf pic32prog
 	mkdir -p ${DESTDIR}/programmers/pic32prog/macosx
 	tar -zxvf ${DOWNLOADS}/pic32prog-osx-fat-${VERSION}.tar.gz
