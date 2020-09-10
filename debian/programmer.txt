@@ -10,70 +10,72 @@ pic32prog.linux_mipsel=${programmer:root}/linux_mipsel/pic32prog
 pic32prog.windows=${programmer:root}/windows/pic32prog
 pic32prog.macosx=${programmer:root}/macosx/pic32prog
 
+programmer.hid.flags=${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.an1388.flags=${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
+programmer.uhb.flags=-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.stk500v2.flags=${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+
 programmer.method=script
-programmer.script.0=__builtin_exec::programmer.${upload.protocol}.script
+programmer.script.0=__builtin_exec::programmer.reset.${upload.reset}.script
+programmer.script.1=__builtin_exec::programmer.${upload.protocol}.script
 
 programmer.hid.script.0=__builtin_bullet::Uploading with HID protocol 
-programmer.hid.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.hid.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.hid.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.hid.script.1.windows=${pic32prog.windows}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.hid.script.1.macosx=${pic32prog.macosx}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.hid.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.hid.flags}
+programmer.hid.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.hid.flags}
+programmer.hid.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.hid.flags}
+programmer.hid.script.1.windows=${pic32prog.windows}::${programmer.hid.flags}
+programmer.hid.script.1.macosx=${pic32prog.macosx}::${programmer.hid.flags}
+programmer.hid.script.2=__builtin_bullet::Finished.
 
 programmer.an1388.script.0=__builtin_bullet::Uploading with AN1388 protocol 
-programmer.an1388.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
-programmer.an1388.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
-programmer.an1388.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
-programmer.an1388.script.1.windows=${pic32prog.windows}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
-programmer.an1388.script.1.macosx=${pic32prog.macosx}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::an1388:${an1388.vid}:${an1388.pid}::-R::20::-p::${filename}.hex
+programmer.an1388.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.an1388.flags}
+programmer.an1388.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.an1388.flags}
+programmer.an1388.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.an1388.flags}
+programmer.an1388.script.1.windows=${pic32prog.windows}::${programmer.an1388.flags}
+programmer.an1388.script.1.macosx=${pic32prog.macosx}::${programmer.an1388.flags}
+programmer.an1388.script.2=__builtin_bullet::Finished.
 
 programmer.uhb.script.0=__builtin_bullet::Uploading with UHB protocol
-programmer.uhb.script.1.linux_arm=${pic32prog.linux_arm}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.uhb.script.1.linux_i386=${pic32prog.linux_i386}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.uhb.script.1.linux_amd64=${pic32prog.linux_amd64}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.uhb.script.1.windows=${pic32prog.windows}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
-programmer.uhb.script.1.macosx=${pic32prog.macosx}::-d::uhb:${bootloader.vid}:${bootloader.pid}::-R::20::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-p::${filename}.hex
+programmer.uhb.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.uhd.flags}
+programmer.uhb.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.uhd.flags}
+programmer.uhb.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.uhd.flags}
+programmer.uhb.script.1.windows=${pic32prog.windows}::${programmer.uhd.flags}
+programmer.uhb.script.1.macosx=${pic32prog.macosx}::${programmer.uhd.flags}
 programmer.uhb.script.2=__builtin_bullet::Finished.
 
 programmer.stk500v2.script.0=__builtin_bullet::Uploading with STK500v2 protocol
-programmer.stk500v2.script.1=__builtin_bullet2::Resetting board
-programmer.stk500v2.script.2=__builtin_port::open::${upload.speed}
-programmer.stk500v2.script.3=__builtin_port::pulse
-programmer.stk500v2.script.4=__builtin_port::close
-programmer.stk500v2.script.5=__builtin_bullet2::Uploading firmware
-programmer.stk500v2.script.6.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2.script.6.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2.script.6.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2.script.6.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2.script.6.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port}::-b::${upload.speed}::-p::${filename}.hex
+programmer.stk500v2.script.1.linux_arm=${pic32prog.linux_arm}::${programmer.stk500v2.flags}
+programmer.stk500v2.script.1.linux_i386=${pic32prog.linux_i386}::${programmer.stk500v2.flags}
+programmer.stk500v2.script.1.linux_amd64=${pic32prog.linux_amd64}::${programmer.stk500v2.flags}
+programmer.stk500v2.script.1.windows=${pic32prog.windows}::${programmer.stk500v2.flags}
+programmer.stk500v2.script.1.macosx=${pic32prog.macosx}::${programmer.stk500v2.flags}
+programmer.stk500v2.script.2=__builtin_bullet::Finished.
 
-programmer.stk500v2-1200.script.0=__builtin_bullet::Uploading with STK500v2 protocol
-programmer.stk500v2-1200.script.1=__builtin_bullet2::Resetting board
-programmer.stk500v2-1200.script.2=__builtin_port::open::1200
-programmer.stk500v2-1200.script.3=__builtin_port::close
-programmer.stk500v2-1200.script.4=__builtin_port::open::${upload.speed}
-programmer.stk500v2-1200.script.5=__builtin_port::close
-programmer.stk500v2-1200.script.6=__builtin_port::find::${program.vid}::${program.pid}
-programmer.stk500v2-1200.script.7=__builtin_bullet2::New matching port found on ${port.found}
-programmer.stk500v2-1200.script.8=__builtin_bullet2::Uploading firmware
-programmer.stk500v2-1200.script.9.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-1200.script.9.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-1200.script.9.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-1200.script.9.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-1200.script.9.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.reset.dtr.script.0=__builtin_bullet::Resetting board
+programmer.reset.dtr.script.1=__builtin_port::open::${upload.speed}
+programmer.reset.dtr.script.2=__builtin_delay::10
+programmer.reset.dtr.script.3=__builtin_port::set::dtr
+programmer.reset.dtr.script.4=__builtin_delay::10
+programmer.reset.dtr.script.5=__builtin_port::clear::dtr
+programmer.reset.dtr.script.6=__builtin_delay::10
+programmer.reset.dtr.script.7=__builtin_port::close
 
-programmer.stk500v2-hunt.script.0=__builtin_bullet::Uploading with STK500v2 protocol
-programmer.stk500v2-hunt.script.1=__builtin_bullet2::Enter programming mode now!
-programmer.stk500v2-hunt.script.2=__builtin_port::find::${program.vid}::${program.pid}
-programmer.stk500v2-hunt.script.3=__builtin_bullet2::New matching port found on ${port.found}
-programmer.stk500v2-hunt.script.4=__builtin_bullet2::Uploading firmware
-programmer.stk500v2-hunt.script.5.linux_arm=${pic32prog.linux_arm}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-hunt.script.5.linux_i386=${pic32prog.linux_i386}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-hunt.script.5.linux_amd64=${pic32prog.linux_amd64}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-hunt.script.5.windows=${pic32prog.windows}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
-programmer.stk500v2-hunt.script.5.macosx=${pic32prog.macosx}::${verbose}::${programmer.pic32prog.verify.${prefs:programmers.pic32prog.verify}}::-d::${port.found}::-B::115200::-b::${upload.speed}::-p::${filename}.hex
+programmer.reset.rts.script.0=__builtin_bullet::Resetting board
+programmer.reset.rts.script.1=__builtin_port::open::${upload.speed}
+programmer.reset.rts.script.2=__builtin_delay::10
+programmer.reset.rts.script.3=__builtin_port::set::rts
+programmer.reset.rts.script.4=__builtin_delay::10
+programmer.reset.rts.script.5=__builtin_port::clear::rts
+programmer.reset.rts.script.6=__builtin_delay::10
+programmer.reset.rts.script.7=__builtin_port::close
 
+programmer.reset.1200baud.script.0=__builtin_bullet::Resetting board
+programmer.reset.1200baud.script.1=__builtin_port::open::1200
+programmer.reset.1200baud.script.2=__builtin_delay::100
+programmer.reset.1200baud.script.3=__builtin_port::close
+programmer.reset.1200baud.script.4=__builtin_delay::2000
 
+programmer.reset.manual.script.0=__builtin_warning::Place board in programming mode now!
 
 programmer.verbose=-DD
 
